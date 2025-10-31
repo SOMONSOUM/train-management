@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: ticket-management
+  security:
+    user:
+      name: dara
+      password: soksan
+  datasource:
+    url: jdbc:mysql://localhost:3307/ticket_management
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      #              dialect: org.hibernate.dialect.MySQL5Dialect
+      format_sql: true
+    show-sql: true
