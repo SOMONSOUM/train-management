@@ -4,6 +4,7 @@ import com.somon.ticket_management.user.dto.SignupDto;
 import com.somon.ticket_management.user.exception.UserAlreadyExistsException;
 import com.somon.ticket_management.user.model.User;
 import com.somon.ticket_management.user.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class UserController {
 
     // ---------------- SIGNUP ----------------
     @PostMapping("/signup")
-    public ResponseEntity<?> signUp(@RequestBody SignupDto request){
+    public ResponseEntity<?> signUp(@Valid @RequestBody SignupDto request){
         try {
             User savedUser = userService.signUp(request);
             return ResponseEntity.ok(savedUser);
