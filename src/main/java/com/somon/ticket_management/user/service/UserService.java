@@ -1,7 +1,7 @@
 package com.somon.ticket_management.user.service;
 
 
-import com.somon.ticket_management.user.dto.SignupDTO;
+import com.somon.ticket_management.user.dto.SignupDto;
 import com.somon.ticket_management.user.exception.UserAlreadyExistsException;
 import com.somon.ticket_management.user.model.User;
 import com.somon.ticket_management.user.repository.UserRepository;
@@ -21,7 +21,7 @@ public class UserService {
     }
 
     // ---------------- SIGNUP ----------------
-    public User signUp(SignupDTO request){
+    public User signUp(SignupDto request){
         if(userRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new UserAlreadyExistsException("User already exists");
         }

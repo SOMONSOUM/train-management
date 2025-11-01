@@ -1,6 +1,6 @@
 package com.somon.ticket_management.user;
 
-import com.somon.ticket_management.user.dto.SignupDTO;
+import com.somon.ticket_management.user.dto.SignupDto;
 import com.somon.ticket_management.user.exception.UserAlreadyExistsException;
 import com.somon.ticket_management.user.model.User;
 import com.somon.ticket_management.user.service.UserService;
@@ -24,7 +24,7 @@ public class UserController {
 
     // ---------------- SIGNUP ----------------
     @PostMapping("/signup")
-    public ResponseEntity<?> signUp(@RequestBody SignupDTO request){
+    public ResponseEntity<?> signUp(@RequestBody SignupDto request){
         try {
             User savedUser = userService.signUp(request);
             return ResponseEntity.ok(savedUser);
